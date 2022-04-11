@@ -26,7 +26,7 @@ fs.open(path.join(__dirname, 'arquivo.txt'), 'r', (err, fd) => {
             }
         }
 
-      object.map(
+      const result = object.map(
             (item) => {
                 return item.join('-');
             }
@@ -34,7 +34,7 @@ fs.open(path.join(__dirname, 'arquivo.txt'), 'r', (err, fd) => {
 
     
         // Write the result in a new file
-        fs.writeFile(path.join(__dirname, 'result.txt'), object.join('\n'), (err) => {
+        fs.writeFile(path.join(__dirname, 'result.txt'), result.join('\n'), (err) => {
             if (err) throw err;
             console.log('Arquivo criado com sucesso!');
         }
